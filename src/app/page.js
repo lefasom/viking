@@ -8,7 +8,7 @@ export default function Home() {
     <div className="grid place-items-center">
       <Header />
 
-      <div class="grid w-3/4 place-items-center grid-cols-2 gap-4 p-4 ">
+      <div class="grid pt-8 w-[90%] place-items-center grid-cols-2 gap-4 p-4 ">
         <div class="w-40 h-40 bg-gray-200">
           <Image
             src={img2}
