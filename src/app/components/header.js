@@ -19,7 +19,7 @@ function Header() {
       </div>
 
       {/* Contenedor para la imagen principal */}
-      <div className="relative bg-[#FEF6DF] bg-opacity-80 w-full h-96 z-10">
+      <div className="relative bg-[#2c2824] bg-opacity-80 w-full h-96 z-10">
         <Image
           src={img}
           alt="Descripción de la imagen principal"
