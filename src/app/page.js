@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Header from "./components/header";
+import Card from "./components/card";
 import Galery from "./components/galery";
 import Footer from "./components/footer";
 
@@ -10,7 +11,8 @@ export default function Home() {
   return (
     <div className="grid place-items-center">
       <Header />
-      <Galery/>
+      {/* <Galery/>*/}
+      <Card/>
       <Footer/>
      
 
