@@ -3,7 +3,7 @@ import { faWhatsapp, faTelegram, faInstagram, faGithub } from '@fortawesome/free
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-gray-800 bg-opacity-25 text-white py-6">
+    <footer className="w-full mt-7 bg-slate-950 text-white py-6">
       <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
         <h2 className="text-2xl font-bold mb-4">Síguenos en nuestras redes</h2>
         <div className="flex space-x-6 mb-4">

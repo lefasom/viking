@@ -5,17 +5,11 @@ import { faWhatsapp, faTelegram, faInstagram } from '@fortawesome/free-brands-sv
 
 export default function Header() {
   return (
-    <header className="relative w-full h-96 m-12">
-      <Image 
-        src={fondo} 
-        alt="Fondo Viking" 
-        layout="fill" 
-        objectFit="cover" 
-        className="absolute inset-0" 
-      />
-      <div className="absolute inset-0 bg-black opacity-55"></div>
+    <header className="relative w-full h-70 p-16 ">
+   
+      <div className="absolute inset-0 bg-slate-950 "></div>
       <div className="relative max-w-6xl mx-auto flex flex-col justify-center items-center h-full text-center text-white">
-        <h1 className="text-4xl text-pink-600 font-bold mb-4">Streaming Hub</h1>
+        <h1 className="text-4xl text-slate-300 font-bold mb-4">Streaming Hub</h1>
             <nav className='flex justify-center m-5'>
           <ul className="flex space-x-12">
             <li>

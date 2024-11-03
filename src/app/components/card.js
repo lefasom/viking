@@ -1,82 +1,137 @@
-export default function CardGroup() {
+'use client'
+import { useState, useRef, useEffect } from 'react';
+
+const cardData = [
+  {
+    title: 'NETFLIX',
+    price: '1.199,00 ARS/mes',
+    description: 'Disfruta de películas y series sin límites.',
+    buttonLabel: 'Comenzar prueba gratuita',
+    features: ['Acceso a todo el catálogo', 'Ver en cualquier dispositivo'],
+    bgColor: 'bg-gray-800',
+    buttonColor: 'bg-red-600',
+  },
+  {
+    title: 'AMAZON PRIME',
+    price: '899,00 ARS/mes',
+    description: 'Acceso a series y películas exclusivas.',
+    buttonLabel: 'Comenzar prueba gratuita',
+    features: ['Envíos gratuitos en Amazon', 'Acceso a Prime Music'],
+    bgColor: 'bg-gray-800',
+    buttonColor: 'bg-yellow-600',
+  },
+  {
+    title: 'DISNEY+',
+    price: '1.300,00 ARS/mes',
+    description: 'Accede a películas y series de Disney.',
+    buttonLabel: 'Comenzar prueba gratuita',
+    features: ['Acceso a todos los clásicos de Disney', 'Ver en cualquier dispositivo'],
+    bgColor: 'bg-gray-800',
+    buttonColor: 'bg-blue-600',
+  },
+  {
+    title: 'HBO MAX',
+    price: '1.200,00 ARS/mes',
+    description: 'Disfruta de series y películas de HBO.',
+    buttonLabel: 'Comenzar prueba gratuita',
+    features: ['Acceso a contenido exclusivo', 'Ver en cualquier dispositivo'],
+    bgColor: 'bg-gray-800',
+    buttonColor: 'bg-green-600',
+  },
+  
+  // Add more card data as needed
+];
+
+export default function CardSlider() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const sliderRef = useRef(null);
+  const totalCards = Math.ceil(cardData.length / 2); // Calculate total sliders based on card data
+
+  const handleNext = () => {
+    if (sliderRef.current) {
+      if (currentIndex === totalCards - 1) {
+        sliderRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        setCurrentIndex(0);
+      } else {
+        sliderRef.current.scrollBy({ left: sliderRef.current.clientWidth, behavior: 'smooth' });
+        setCurrentIndex((prevIndex) => prevIndex + 1);
+      }
+    }
+  };
+
+  const handlePrev = () => {
+    if (sliderRef.current) {
+      if (currentIndex === 0) {
+        sliderRef.current.scrollTo({ left: sliderRef.current.scrollWidth, behavior: 'smooth' });
+        setCurrentIndex(totalCards - 1);
+      } else {
+        sliderRef.current.scrollBy({ left: -sliderRef.current.clientWidth, behavior: 'smooth' });
+        setCurrentIndex((prevIndex) => prevIndex - 1);
+      }
+    }
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 3000); // Cambia el tiempo a 3000ms (3 segundos)
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
   return (
-    <div className="flex flex-col items-center space-y-8 pt-12 pb-12">
-      {/* Tarjeta de Netflix */}
-      <div className="max-w-sm mx-auto bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-        <div className="p-6">
-          <h2 className="text-2xl font-bold text-white">NETFLIX</h2>
-          <p className="text-gray-300 mt-2 text-lg">1.199,00 ARS/mes</p>
-          <p className="text-xs text-gray-400">+ impuestos aplicables</p>
+    <div className="relative w-full flex items-center justify-center pt-12 pb-12">
+      <button
+        onClick={handlePrev}
+        className="absolute left-0 z-10 p-2 bg-gray-800 text-white rounded-full hover:bg-gray-700"
+      >
+        ←
+      </button>
 
-          <button className="w-full bg-red-600 text-white font-bold py-2 px-4 rounded mt-4 hover:bg-red-500 transition duration-300">
-            Comenzar prueba gratuita
-          </button>
+      <div className="w-[90%] overflow-hidden">
+        <div ref={sliderRef} className="flex overflow-x-hidden">
+          {Array.from({ length: totalCards }).map((_, sliderIndex) => (
+            <div key={sliderIndex} className="min-w-full flex justify-center shadow-lg overflow-hidden">
+              {cardData.slice(sliderIndex * 2, sliderIndex * 2 + 2).map((card, cardIndex) => (
+                <div key={cardIndex} className={`p-6 w-[45%] m-2 ${card.bgColor}`}>
+                  <h2 className="text-2xl font-bold text-white">{card.title}</h2>
+                  <p className="text-gray-300 mt-2 text-lg">{card.price}</p>
+                  <p className="text-xs text-gray-400">+ impuestos aplicables</p>
 
-          <p className="mt-4 text-gray-200">
-            Disfruta de películas y series sin límites.
-          </p>
+                  <button className={`w-full ${card.buttonColor} text-white font-bold py-2 px-4 rounded mt-4 hover:bg-opacity-80 transition duration-300`}>
+                    {card.buttonLabel}
+                  </button>
 
-          <ul className="mt-4 text-gray-300">
-            <li className="flex items-center">
-              <span className="text-green-400 mr-2">✔</span> Acceso a todo el catálogo
-            </li>
-            <li className="flex items-center">
-              <span className="text-green-400 mr-2">✔</span> Ver en cualquier dispositivo
-            </li>
-          </ul>
+                  <p className="mt-4 text-gray-200">{card.description}</p>
+
+                  <ul className="mt-4 text-gray-300">
+                    {card.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center">
+                        <span className="text-green-400 mr-2">✔</span> {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Tarjeta de Amazon Prime */}
-      <div className="mx-auto  bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-        <div className="p-6">
-          <h2 className="text-2xl font-bold text-white">AMAZON PRIME</h2>
-          <p className="text-gray-300 mt-2 text-lg">899,00 ARS/mes</p>
-          <p className="text-xs text-gray-400">+ impuestos aplicables</p>
+      <button
+        onClick={handleNext}
+        className="absolute right-0 z-10 p-2 bg-gray-800 text-white rounded-full hover:bg-gray-700"
+      >
+        →
+      </button>
 
-          <button className="w-full bg-yellow-600 text-black font-bold py-2 px-4 rounded mt-4 hover:bg-yellow-500 transition duration-300">
-            Comenzar prueba gratuita
-          </button>
-
-          <p className="mt-4 text-gray-200">
-            Acceso a series y películas exclusivas.
-          </p>
-
-          <ul className="mt-4 text-gray-300">
-            <li className="flex items-center">
-              <span className="text-green-400 mr-2">✔</span> Envíos gratuitos en Amazon
-            </li>
-            <li className="flex items-center">
-              <span className="text-green-400 mr-2">✔</span> Acceso a Prime Music
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Tarjeta de YouTube Premium */}
-      <div className="max-w-sm mx-auto bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-        <div className="p-6">
-          <h2 className="text-2xl font-bold text-white">YOUTUBE PREMIUM</h2>
-          <p className="text-gray-300 mt-2 text-lg">119,00 ARS/mes</p>
-          <p className="text-xs text-gray-400">+ impuestos aplicables</p>
-
-          <button className="w-full bg-red-600 text-white font-bold py-2 px-4 rounded mt-4 hover:bg-red-500 transition duration-300">
-            Comenzar prueba gratuita
-          </button>
-
-          <p className="mt-4 text-gray-200">
-            Disfruta de videos sin anuncios y acceso a YouTube Music.
-          </p>
-
-          <ul className="mt-4 text-gray-300">
-            <li className="flex items-center">
-              <span className="text-green-400 mr-2">✔</span> Acceso a YouTube Originals
-            </li>
-            <li className="flex items-center">
-              <span className="text-green-400 mr-2">✔</span> Reproducción en segundo plano
-            </li>
-          </ul>
-        </div>
+      <div className="absolute bottom-0 flex space-x-2 mt-6">
+        {[...Array(totalCards)].map((_, index) => (
+          <div
+            key={index}
+            className={`h-3 w-3 rounded-full ${index === currentIndex ? 'bg-blue-500' : 'bg-gray-400'}`}
+          ></div>
+        ))}
       </div>
     </div>
   );
