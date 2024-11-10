@@ -88,14 +88,14 @@ export default function CardSlider() {
         ←
       </button>
 
-      <div className="w-[90%] overflow-hidden rounded-full">
+      <div className="w-[70%] overflow-hidden ">
         <div ref={sliderRef} className="flex overflow-x-hidden">
           {cardData.map((card, cardIndex) => (
             <div key={cardIndex} className="min-w-full flex justify-center shadow-lg overflow-hidden">
-              <div className={`w-[70%] m-2 h-96 ${card.bgColor}  rounded-sm`}>
-                <h2 className="mt-6 w-[90%] mx-auto text-2xl font-bold text-white">{card.title}</h2>
-                <p className="mx-6 text-gray-300 mt-2 text-lg">{card.price}</p>
-                <p className="mx-6 text-xs text-gray-400">+ impuestos aplicables</p>
+              <div className={`w-[70%] m-2 ${card.bgColor}  rounded-sm`}>
+                <h2 className="mt-6 w-[90%] mx-auto text-3xl font-bold text-white">{card.title}</h2>
+                <p className="mx-6 text-gray-300 mt-2 text-xl">{card.price}</p>
+                <p className="mx-6 text-sm text-gray-400">+ impuestos aplicables</p>
 
                 <button className={`w-full ${card.buttonColor} text-white font-bold py-2 px-4 rounded mt-4 hover:bg-opacity-80 transition duration-300`}>
                   {card.buttonLabel}
