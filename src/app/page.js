@@ -14,8 +14,7 @@ export default function Home() {
       {/* <Galery/>*/}
         <h2 className="text-2xl w-full mt-6 text-center font-bold  text-zinc-400">Síguenos en nuestras redes</h2>
       <Card />
-      <Card />
-      <Card />
+
 
       {/* <Card/> */}
       <Footer />

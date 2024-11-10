@@ -93,7 +93,7 @@ export default function CardSlider() {
           {cardData.map((card, cardIndex) => (
             <div key={cardIndex} className="min-w-full flex justify-center shadow-lg overflow-hidden">
               <div className={`w-[60%] m-2 ${card.bgColor}  rounded-sm`}>
-                <h2 className="mt-6 mx-6 text-2xl font-bold text-white">{card.title}</h2>
+                <h2 className="mt-6 w-[90%] mx-auto text-2xl font-bold text-white">{card.title}</h2>
                 <p className="mx-6 text-gray-300 mt-2 text-lg">{card.price}</p>
                 <p className="mx-6 text-xs text-gray-400">+ impuestos aplicables</p>
 
@@ -103,7 +103,7 @@ export default function CardSlider() {
 
                 <p className="mt-4 mx-6 text-gray-200">{card.description}</p>
 
-                <ul className="mt-4 mx-6 mb-6 text-gray-300">
+                <ul className="mt-4 mb-6 w-[90%] mx-auto text-gray-300">
                   {card.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center">
                       <span className="text-green-400 mr-2">✔</span> {feature}
