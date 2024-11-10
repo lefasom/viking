@@ -92,7 +92,7 @@ export default function CardSlider() {
         <div ref={sliderRef} className="flex overflow-x-hidden">
           {cardData.map((card, cardIndex) => (
             <div key={cardIndex} className="min-w-full flex justify-center shadow-lg overflow-hidden">
-              <div className={`w-[60%] m-2 ${card.bgColor}  rounded-sm`}>
+              <div className={`w-[70%] m-2 h-96 ${card.bgColor}  rounded-sm`}>
                 <h2 className="mt-6 w-[90%] mx-auto text-2xl font-bold text-white">{card.title}</h2>
                 <p className="mx-6 text-gray-300 mt-2 text-lg">{card.price}</p>
                 <p className="mx-6 text-xs text-gray-400">+ impuestos aplicables</p>
