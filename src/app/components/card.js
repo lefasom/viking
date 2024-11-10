@@ -93,21 +93,21 @@ export default function CardSlider() {
           {Array.from({ length: totalCards }).map((_, sliderIndex) => (
             <div key={sliderIndex} className="min-w-full flex justify-center shadow-lg overflow-hidden">
               {cardData.slice(sliderIndex * 2, sliderIndex * 2 + 2).map((card, cardIndex) => (
-                <div key={cardIndex} className={`p-6 w-[45%] m-2 ${card.bgColor}`}>
-                  <h2 className="text-2xl font-bold text-white">{card.title}</h2>
-                  <p className="text-gray-300 mt-2 text-lg">{card.price}</p>
-                  <p className="text-xs text-gray-400">+ impuestos aplicables</p>
+                <div key={cardIndex} className={`flex flex-col w-[45%] m-2 ${card.bgColor} items-center`}>
+                  <h2 className="w-[80%] mt-6 text-2xl font-bold text-white">{card.title}</h2>
+                  <p className="w-[80%] text-gray-300 mt-2 text-lg">{card.price}</p>
+                  <p className="w-[80%] text-xs text-gray-400">+ impuestos aplicables</p>
 
-                  <button className={`w-full ${card.buttonColor} text-white font-bold py-2 px-4 rounded mt-4 hover:bg-opacity-80 transition duration-300`}>
+                  <button className={`w-[90%] ${card.buttonColor} text-white font-bold py-2 px-4 rounded mt-4 hover:bg-opacity-80 transition duration-300`}>
                     {card.buttonLabel}
                   </button>
 
-                  <p className="mt-4 text-gray-200">{card.description}</p>
+                  <p className="w-[70%]  mt-4 text-gray-200">{card.description}</p>
 
-                  <ul className="mt-4 text-gray-300">
+                  <ul className="w-[80%] mt-4 mb-6 items-center text-gray-300">
                     {card.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center">
-                        <span className="text-green-400 mr-2">✔</span> {feature}
+                        <span className="text-green-400 mr-2 ">✔</span> {feature}
                       </li>
                     ))}
                   </ul>

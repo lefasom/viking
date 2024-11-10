@@ -13,7 +13,7 @@ export default function Home() {
       <Header />
       {/* <Galery/>*/}
       <Card/>
-      <Card/>
+      {/* <Card/> */}
       <Footer/>
      
 
