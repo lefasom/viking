@@ -39,13 +39,13 @@ const cardData = [
     buttonColor: 'bg-green-600',
   },
   
-  // Add more card data as needed
+  // Agrega más datos de tarjetas si es necesario
 ];
 
 export default function CardSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef(null);
-  const totalCards = Math.ceil(cardData.length / 2); // Calculate total sliders based on card data
+  const totalCards = cardData.length; // Cambiar para reflejar el número total de tarjetas
 
   const handleNext = () => {
     if (sliderRef.current) {
@@ -83,36 +83,34 @@ export default function CardSlider() {
     <div className="relative w-full flex items-center justify-center pt-12 pb-12">
       <button
         onClick={handlePrev}
-        className="absolute left-0 z-10 p-2 bg-gray-800 text-white rounded-full hover:bg-gray-700"
+        className="absolute left-4 z-10 p-2 bg-gray-600 text-white rounded-full hover:bg-gray-700"
       >
         ←
       </button>
 
-      <div className="w-[90%] overflow-hidden">
+      <div className="w-[90%] overflow-hidden rounded-full">
         <div ref={sliderRef} className="flex overflow-x-hidden">
-          {Array.from({ length: totalCards }).map((_, sliderIndex) => (
-            <div key={sliderIndex} className="min-w-full flex justify-center shadow-lg overflow-hidden">
-              {cardData.slice(sliderIndex * 2, sliderIndex * 2 + 2).map((card, cardIndex) => (
-                <div key={cardIndex} className={`flex flex-col w-[45%] m-2 ${card.bgColor} items-center`}>
-                  <h2 className="w-[80%] mt-6 text-2xl font-bold text-white">{card.title}</h2>
-                  <p className="w-[80%] text-gray-300 mt-2 text-lg">{card.price}</p>
-                  <p className="w-[80%] text-xs text-gray-400">+ impuestos aplicables</p>
+          {cardData.map((card, cardIndex) => (
+            <div key={cardIndex} className="min-w-full flex justify-center shadow-lg overflow-hidden">
+              <div className={`w-[60%] m-2 ${card.bgColor}  rounded-sm`}>
+                <h2 className="mt-6 mx-6 text-2xl font-bold text-white">{card.title}</h2>
+                <p className="mx-6 text-gray-300 mt-2 text-lg">{card.price}</p>
+                <p className="mx-6 text-xs text-gray-400">+ impuestos aplicables</p>
 
-                  <button className={`w-[90%] ${card.buttonColor} text-white font-bold py-2 px-4 rounded mt-4 hover:bg-opacity-80 transition duration-300`}>
-                    {card.buttonLabel}
-                  </button>
+                <button className={`w-full ${card.buttonColor} text-white font-bold py-2 px-4 rounded mt-4 hover:bg-opacity-80 transition duration-300`}>
+                  {card.buttonLabel}
+                </button>
 
-                  <p className="w-[70%]  mt-4 text-gray-200">{card.description}</p>
+                <p className="mt-4 mx-6 text-gray-200">{card.description}</p>
 
-                  <ul className="w-[80%] mt-4 mb-6 items-center text-gray-300">
-                    {card.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center">
-                        <span className="text-green-400 mr-2 ">✔</span> {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+                <ul className="mt-4 mx-6 mb-6 text-gray-300">
+                  {card.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center">
+                      <span className="text-green-400 mr-2">✔</span> {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
@@ -120,7 +118,7 @@ export default function CardSlider() {
 
       <button
         onClick={handleNext}
-        className="absolute right-0 z-10 p-2 bg-gray-800 text-white rounded-full hover:bg-gray-700"
+        className="absolute right-4 z-10 p-2 bg-gray-600 text-white rounded-full hover:bg-gray-700"
       >
         →
       </button>
