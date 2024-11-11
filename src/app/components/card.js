@@ -80,10 +80,10 @@ export default function CardSlider() {
   }, [currentIndex]);
 
   return (
-    <div className="relative w-full flex items-center justify-center pt-12 pb-12">
+    <div className="relative w-full flex items-center justify-center pt-12 pb-12 ">
       <button
         onClick={handlePrev}
-        className="absolute text-3xl left-4 z-10 w-14 h-14 bg-gray-600 text-white rounded-full hover:bg-gray-700"
+        className="absolute text-2xl left-4 z-10 w-12 h-12 bg-gray-600 text-white rounded-full hover:bg-gray-700"
       >
         ←
       </button>
@@ -91,42 +91,55 @@ export default function CardSlider() {
       <div className="w-[70%] overflow-hidden ">
         <div ref={sliderRef} className="flex overflow-x-hidden">
           {cardData.map((card, cardIndex) => (
-            <div key={cardIndex} className="min-w-full flex justify-center">
-              <div className={`w-[80%] ${card.bgColor} rounded-sm`}>
-                <div className=''>
-                  {/* <h2 className="text-4xl font-bold text-white">{card.title}</h2> */}
-                  <p className="text-gray-300 mt-2 text-2xl">{card.price}</p>
-                  {/* <p className="mx-5 text-lg text-gray-400">+ impuestos aplicables</p> */}
+           <div key={cardIndex} className="min-w-full flex justify-center shadow-lg overflow-hidden">
+           <div className={`w-full   ${card.bgColor}  `}>
+             <div className='w-[80%] mx-auto my-6 '>
+               {/* Título aún más pequeño en móviles */}
+               <h2 className="text-2xl md:text-xl sm:text-lg font-bold text-white">{card.title}</h2>
+               
+               {/* Precio aún más pequeño */}
+               <p className="text-lg md:text-base sm:text-sm text-gray-300 mt-2">{card.price}</p>
+               
+               {/* Información de impuestos aún más pequeña */}
+               <p className="mx-5 text-sm md:text-xs sm:text-[10px] text-gray-400">+ impuestos aplicables</p>
+         
+               {/* Botón aún más pequeño */}
+               <button className={`w-full ${card.buttonColor} text-white font-bold py-2 px-3 sm:py-1 sm:px-2 text-sm sm:text-xs rounded mt-4 hover:bg-opacity-80 transition duration-300`}>
+                 {card.buttonLabel}
+               </button>
+         
+               {/* Descripción aún más pequeña */}
+               <p className="text-sm md:text-xs sm:text-[10px] text-gray-200 mt-4">{card.description}</p>
+         
+               {/* Lista de características aún más pequeña */}
+               <ul className="mx-auto text-sm md:text-xs sm:text-[10px] text-gray-300 mt-4">
+                 {card.features.map((feature, featureIndex) => (
+                   <li key={featureIndex} className="flex flex-wrap items-center">
+                     {/* Icono con ajuste de tamaño */}
+                     <span className="text-base md:text-sm sm:text-xs text-green-400 mr-2">✔</span> {feature}
+                   </li>
+                 ))}
+               </ul>
+             </div>
+           </div>
+         </div>
+         
 
-                  <button className={`w-full ${card.buttonColor} text-white font-bold py-3 px-5 rounded mt-4 hover:bg-opacity-80 transition duration-300`}>
-                    {card.buttonLabel}
-                  </button>
 
-                  <p className="text-lg text-gray-200 mt-4">{card.description}</p>
 
-                  <ul className="mx-auto text-lg text-gray-300 mt-4">
-                    {card.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center">
-                        <span className="text-green-400 mr-2 text-xl">✔</span> {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
 
-            </div>
           ))}
         </div>
       </div>
 
       <button
         onClick={handleNext}
-        className="absolute text-3xl z-10 w-14 h-14 right-4 p-2 bg-gray-600 text-white rounded-full hover:bg-gray-700"
+        className="absolute text-2xl z-10 w-12 h-12 right-4 p-2 bg-gray-600 text-white rounded-full hover:bg-gray-700"
       >
         →
       </button>
 
-      <div className="absolute bottom-0 flex space-x-2 mt-6">
+      <div className="absolute  bottom-0 flex space-x-2 mt-6">
         {[...Array(totalCards)].map((_, index) => (
           <div
             key={index}
