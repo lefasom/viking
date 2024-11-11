@@ -38,7 +38,7 @@ const cardData = [
     bgColor: 'bg-gray-800',
     buttonColor: 'bg-green-600',
   },
-  
+
   // Agrega más datos de tarjetas si es necesario
 ];
 
@@ -83,7 +83,7 @@ export default function CardSlider() {
     <div className="relative w-full flex items-center justify-center pt-12 pb-12">
       <button
         onClick={handlePrev}
-        className="absolute left-4 z-10 p-2 bg-gray-600 text-white rounded-full hover:bg-gray-700"
+        className="absolute text-3xl left-4 z-10 w-14 h-14 bg-gray-600 text-white rounded-full hover:bg-gray-700"
       >
         ←
       </button>
@@ -92,24 +92,27 @@ export default function CardSlider() {
         <div ref={sliderRef} className="flex overflow-x-hidden">
           {cardData.map((card, cardIndex) => (
             <div key={cardIndex} className="min-w-full flex justify-center shadow-lg overflow-hidden">
-              <div className={`w-[70%] m-2 ${card.bgColor}  rounded-sm`}>
-                <h2 className="mt-6 w-[90%] mx-auto text-3xl font-bold text-white">{card.title}</h2>
-                <p className="mx-6 text-gray-300 mt-2 text-xl">{card.price}</p>
-                <p className="mx-6 text-sm text-gray-400">+ impuestos aplicables</p>
+              <div className={`w-[80%] m-2 ${card.bgColor}  rounded-sm`}>
+                <div className=''>
+                  <h2 className=" text-3xl font-bold text-white">{card.title}</h2>
+                  <p className=" text-gray-300 mt-2 text-xl">{card.price}</p>
+                  <p className="mx-5 text-sm text-gray-400">+ impuestos aplicables</p>
 
-                <button className={`w-full ${card.buttonColor} text-white font-bold py-2 px-4 rounded mt-4 hover:bg-opacity-80 transition duration-300`}>
+                  <button className={`w-full ${card.buttonColor} text-white font-bold py-2 px-4 rounded mt-4 hover:bg-opacity-80 transition duration-300`}>
                   {card.buttonLabel}
                 </button>
 
-                <p className="mt-4 mx-6 text-gray-200">{card.description}</p>
+                  <p className="  text-gray-200">{card.description}</p>
 
-                <ul className="mt-4 mb-6 w-[90%] mx-auto text-gray-300">
-                  {card.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center">
-                      <span className="text-green-400 mr-2">✔</span> {feature}
-                    </li>
-                  ))}
-                </ul>
+                  <ul className=" mx-auto text-gray-300">
+                    {card.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center">
+                        <span className="text-green-400 mr-2">✔</span> {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
               </div>
             </div>
           ))}
@@ -118,7 +121,7 @@ export default function CardSlider() {
 
       <button
         onClick={handleNext}
-        className="absolute right-4 z-10 p-2 bg-gray-600 text-white rounded-full hover:bg-gray-700"
+        className="absolute text-3xl z-10 w-14 h-14 right-4 p-2 bg-gray-600 text-white rounded-full hover:bg-gray-700"
       >
         →
       </button>
