@@ -91,29 +91,29 @@ export default function CardSlider() {
       <div className="w-[70%] overflow-hidden ">
         <div ref={sliderRef} className="flex overflow-x-hidden">
           {cardData.map((card, cardIndex) => (
-            <div key={cardIndex} className="min-w-full flex justify-center shadow-lg overflow-hidden">
-              <div className={`w-[80%] m-2 ${card.bgColor}  rounded-sm`}>
+            <div key={cardIndex} className="min-w-full flex justify-center">
+              <div className={`w-[80%] ${card.bgColor} rounded-sm`}>
                 <div className=''>
-                  <h2 className=" text-3xl font-bold text-white">{card.title}</h2>
-                  <p className=" text-gray-300 mt-2 text-xl">{card.price}</p>
-                  <p className="mx-5 text-sm text-gray-400">+ impuestos aplicables</p>
+                  {/* <h2 className="text-4xl font-bold text-white">{card.title}</h2> */}
+                  <p className="text-gray-300 mt-2 text-2xl">{card.price}</p>
+                  {/* <p className="mx-5 text-lg text-gray-400">+ impuestos aplicables</p> */}
 
-                  <button className={`w-full ${card.buttonColor} text-white font-bold py-2 px-4 rounded mt-4 hover:bg-opacity-80 transition duration-300`}>
-                  {card.buttonLabel}
-                </button>
+                  <button className={`w-full ${card.buttonColor} text-white font-bold py-3 px-5 rounded mt-4 hover:bg-opacity-80 transition duration-300`}>
+                    {card.buttonLabel}
+                  </button>
 
-                  <p className="  text-gray-200">{card.description}</p>
+                  <p className="text-lg text-gray-200 mt-4">{card.description}</p>
 
-                  <ul className=" mx-auto text-gray-300">
+                  <ul className="mx-auto text-lg text-gray-300 mt-4">
                     {card.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center">
-                        <span className="text-green-400 mr-2">✔</span> {feature}
+                        <span className="text-green-400 mr-2 text-xl">✔</span> {feature}
                       </li>
                     ))}
                   </ul>
                 </div>
-
               </div>
+
             </div>
           ))}
         </div>
