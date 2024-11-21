@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="border-t border-gray-600 w-full mb-6"></div>
 
         {/* Información sobre el creador */}
-        <h2 className="text-lg font-semibold text-gray-300 mb-2">Creado por [Tu Nombre]</h2>
+        {/* <h2 className="text-lg font-semibold text-gray-300 mb-2">Creado por Lefasom</h2> */}
 
         {/* Icono GitHub */}
         <a 
@@ -51,11 +51,11 @@ export default function Footer() {
           className="flex items-center text-gray-400 hover:text-white transition duration-300 transform hover:scale-110 mb-4"
         >
           <FontAwesomeIcon icon={faGithub} className="h-8 w-8 mr-2" />
-          <span>Visita mi GitHub</span>
+          <span>Lefasom</span>
         </a>
 
         {/* Derechos de Autor */}
-        <p className="text-xs text-gray-400">© {new Date().getFullYear()} Streaming Hub. Todos los derechos reservados.</p>
+        <p className="text-xs text-gray-400">© {new Date().getFullYear()} Viking store. Todos los derechos reservados.</p>
       </div>
     </footer>
   );
