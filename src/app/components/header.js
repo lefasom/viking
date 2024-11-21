@@ -13,17 +13,13 @@ export default function Header() {
 
         {/* Título con sombra */}
         <h1 className="text-5xl sm:text-6xl text-slate-200 font-extrabold mb-6 drop-shadow-lg">Viking store</h1>
-
-        {/* Subtítulo opcional */}
-     
-
         {/* Flecha animada */}
         <h3
           className='pb-6 text-stone-50 font-semibold'
         ></h3>
         <div className="animate-bounce mb-6">
 
-        <svg className="w-12 h-12 text-blue-400 animate-point-to-icons" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-12 h-12 text-green-400 animate-point-to-icons" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fillRule="evenodd" clipRule="evenodd" d="M18.5861 8.0858C18.1956 7.69528 17.5624 7.69528 17.1719 8.0858L11.879 13.3787L6.58609 8.0858C6.19556 7.69528 5.5624 7.69528 5.17187 8.0858L4.46477 8.79291C4.07424 9.18343 4.07424 9.8166 4.46477 10.2071L10.8183 16.5607C11.4041 17.1465 12.3539 17.1465 12.9396 16.5607L19.2932 10.2071C19.6837 9.8166 19.6837 9.18343 19.2932 8.79291L18.5861 8.0858Z" className="fill-current" />
           </svg>
         </div>
@@ -32,13 +28,13 @@ export default function Header() {
         <nav className="flex justify-center space-x-6">
           <ul className="flex space-x-8">
             <li>
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="flex items-center text-slate-200  hover:text-green-400 transition transform hover:scale-110 duration-300">
-                <FontAwesomeIcon icon={faWhatsapp} className="h-14 w-14" />
+          <a href="https://t.me/yourtelegramusername" target="_blank" rel="noopener noreferrer" className="flex items-center   text-slate-200 hover:text-blue-400 transition transform hover:scale-110 duration-300">
+                <FontAwesomeIcon icon={faTelegram} className="h-14 w-14" />
               </a>
             </li>
             <li>
-              <a href="https://t.me/yourtelegramusername" target="_blank" rel="noopener noreferrer" className="flex items-center  text-blue-400  hover:text-blue-400 transition transform hover:scale-110 duration-300">
-                <FontAwesomeIcon icon={faTelegram} className="h-14 w-14" />
+                  <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="flex items-center animate-pulse text-green-400  hover:text-green-400 transition transform hover:scale-110 duration-300">
+                <FontAwesomeIcon icon={faWhatsapp} className="h-14 w-14" />
               </a>
             </li>
             <li>

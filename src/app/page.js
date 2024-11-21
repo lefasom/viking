@@ -14,7 +14,7 @@ export default function Home() {
       {/* <h2 className="text-2xl w-full my-6 text-center font-bold  text-zinc-400">Síguenos en nuestras redes</h2> */}
       {/* <Galery /> */}
       
-      <h2 className=" text-2xl w-full mt-12 text-center font-bold  text-zinc-200"> Tu centro de entretenimiento con las mejores plataformas de streaming.</h2>
+      <h2 className=" text-2xl w-[80%] mt-12 text-center font-bold  text-zinc-200"> Tu centro de entretenimiento con las mejores plataformas de streaming.</h2>
       <Card />
       <Footer />
     </div>
