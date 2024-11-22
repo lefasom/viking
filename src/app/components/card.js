@@ -6,7 +6,8 @@ const cardData = [
     title: 'NETFLIX',
     price: '1.199,00 ARS/mes',
     description: 'Disfruta de películas y series sin límites.',
-    buttonLabel: 'Comenzar prueba gratuita',
+    buttonLabel: 'Comprar',
+
     features: ['Acceso a todo el catálogo', 'Ver en cualquier dispositivo'],
     bgColor: 'bg-gray-800',
     buttonColor: 'bg-red-600',
@@ -15,7 +16,8 @@ const cardData = [
     title: 'AMAZON PRIME',
     price: '899,00 ARS/mes',
     description: 'Acceso a series y películas exclusivas.',
-    buttonLabel: 'Comenzar prueba gratuita',
+    buttonLabel: 'Comprar',
+
     features: ['Envíos gratuitos en Amazon', 'Acceso a Prime Music'],
     bgColor: 'bg-gray-800',
     buttonColor: 'bg-yellow-600',
@@ -24,7 +26,8 @@ const cardData = [
     title: 'DISNEY+',
     price: '1.300,00 ARS/mes',
     description: 'Accede a películas y series de Disney.',
-    buttonLabel: 'Comenzar prueba gratuita',
+    buttonLabel: 'Comprar',
+
     features: ['Acceso a todos los clásicos de Disney', 'Ver en cualquier dispositivo'],
     bgColor: 'bg-gray-800',
     buttonColor: 'bg-blue-600',
@@ -33,7 +36,7 @@ const cardData = [
     title: 'HBO MAX',
     price: '1.200,00 ARS/mes',
     description: 'Disfruta de series y películas de HBO.',
-    buttonLabel: 'Comenzar prueba gratuita',
+    buttonLabel: 'Comprar',
     features: ['Acceso a contenido exclusivo', 'Ver en cualquier dispositivo'],
     bgColor: 'bg-gray-800',
     buttonColor: 'bg-green-600',
@@ -56,13 +59,11 @@ export default function CardSlider() {
               {/* Precio */}
               <p className="text-lg sm:text-base md:text-sm text-gray-300 mt-2">{card.price}</p>
 
-              {/* Información de impuestos */}
-              <p className="mx-5 text-sm sm:text-xs text-gray-400">+ impuestos aplicables</p>
+              {/* Información de impuestos
+              <p className="mx-5 text-sm sm:text-xs text-gray-400">+ impuestos aplicables</p> */}
 
               {/* Botón */}
-              <button className={`w-full ${card.buttonColor} text-white font-bold py-2 px-4 sm:py-1 sm:px-2 text-sm sm:text-xs rounded mt-4 hover:bg-opacity-80 transition duration-300`}>
-                {card.buttonLabel}
-              </button>
+
 
               {/* Descripción */}
               <p className="text-sm sm:text-xs md:text-[12px] text-gray-200 mt-4">{card.description}</p>
@@ -75,6 +76,9 @@ export default function CardSlider() {
                   </li>
                 ))}
               </ul>
+              <button className={`w-full ${card.buttonColor} text-white font-bold py-2 px-4 sm:py-1 sm:px-2 text-sm sm:text-xs rounded mt-4 hover:bg-opacity-80 transition duration-300`}>
+                {card.buttonLabel}
+              </button>
             </div>
           </div>
         ))}
