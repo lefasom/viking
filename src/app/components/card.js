@@ -6,7 +6,7 @@ const cardData = [
     title: 'NETFLIX',
     price: '1.199,00 ARS/mes',
     description: 'Disfruta de películas y series sin límites.',
-    buttonLabel: 'Comprar',
+    buttonLabel: 'Eliminar',
 
     features: ['Acceso a todo el catálogo', 'Ver en cualquier dispositivo'],
     bgColor: 'bg-gray-800',
@@ -16,7 +16,7 @@ const cardData = [
     title: 'AMAZON PRIME',
     price: '899,00 ARS/mes',
     description: 'Acceso a series y películas exclusivas.',
-    buttonLabel: 'Comprar',
+    buttonLabel: 'Agregar',
 
     features: ['Envíos gratuitos en Amazon', 'Acceso a Prime Music'],
     bgColor: 'bg-gray-800',
@@ -26,7 +26,7 @@ const cardData = [
     title: 'DISNEY+',
     price: '1.300,00 ARS/mes',
     description: 'Accede a películas y series de Disney.',
-    buttonLabel: 'Comprar',
+    buttonLabel: 'Agregar',
 
     features: ['Acceso a todos los clásicos de Disney', 'Ver en cualquier dispositivo'],
     bgColor: 'bg-gray-800',
@@ -36,7 +36,7 @@ const cardData = [
     title: 'HBO MAX',
     price: '1.200,00 ARS/mes',
     description: 'Disfruta de series y películas de HBO.',
-    buttonLabel: 'Comprar',
+    buttonLabel: 'Agregar',
     features: ['Acceso a contenido exclusivo', 'Ver en cualquier dispositivo'],
     bgColor: 'bg-gray-800',
     buttonColor: 'bg-green-600',
