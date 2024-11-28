@@ -69,7 +69,7 @@ const Cart = () => {
         // El mensaje se formatea con salto de línea (%0A) y se genera el enlace
         const message = `${greeting}%0A%0ADetalles del pedido:%0A${itemsDetails}%0A%0ATotal: ${total} ARS%0A%0AGracias por tu atención!`;
         
-        return `https://wa.me/2616115057?text=${message}`;
+        return `https://wa.me/2616615057?text=${message}`;
     };
 
     return (
