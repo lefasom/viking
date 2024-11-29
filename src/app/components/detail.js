@@ -1,9 +1,9 @@
 'use client'
+import Link from 'next/link';
 import { useState } from 'react';
 
 const Cart = () => {
-    // Estado para manejar la visibilidad del carrito
-    const [isVisible, setIsVisible] = useState(true);
+
 
     // Supongamos que estos son los items que el usuario ha agregado al carrito
     const [cartItems, setCartItems] = useState([
@@ -55,10 +55,6 @@ const Cart = () => {
         return cartItems.reduce((total, item) => total + parseFloat(item.price.replace(' ARS/mes', '').replace('.', '').replace(',', '.')), 0);
     };
 
-    // Función para cerrar el carrito
-    const closeCart = () => {
-        setIsVisible(false);
-    };
 
     // Crear el mensaje para enviar a WhatsApp
     const createWhatsAppMessage = () => {
@@ -74,15 +70,15 @@ const Cart = () => {
 
     return (
         <>
-            {isVisible && (
+        
                 <div className='fixed bg-black bg-opacity-80 z-50 flex right-0 top-0 w-full h-screen'>
                     <div className='absolute right-3 top-3'>
-                        <button
+                        <Link
                             className='text-cyan-50 p-3 text-2xl'
-                            onClick={closeCart} // Cierra el carrito al hacer clic en X
+                            href={'/'}
                         >
                             X
-                        </button>
+                        </Link>
                     </div>
                     <div className="m-auto mt-12 w-[70%] p-4 max-w-md space-y-6 h-screen overflow-y-auto">
                         <h2 className="text-2xl font-bold text-center text-gray-300">Tu carrito de compras</h2>
@@ -121,7 +117,7 @@ const Cart = () => {
                         )}
                     </div>
                 </div>
-            )}
+           
         </>
     );
 };

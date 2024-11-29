@@ -45,6 +45,8 @@ const cardData = [
 
 export default function CardSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [stateCart, setStateCart] = useState(true);
+
   const totalCards = cardData.length;
 
   return (
@@ -76,7 +78,7 @@ export default function CardSlider() {
                   </li>
                 ))}
               </ul>
-              <button className={`w-full ${card.buttonColor} text-white font-bold py-2 px-4 sm:py-1 sm:px-2 text-sm sm:text-xs rounded mt-4 hover:bg-opacity-80 transition duration-300`}>
+              <button className={`w-full  ${stateCart?'bg-green-600':'bg-red-600'} text-white font-bold py-2 px-4 sm:py-1 sm:px-2 text-sm sm:text-xs rounded mt-4 hover:bg-opacity-80 transition duration-300`}>
                 {card.buttonLabel}
               </button>
             </div>
