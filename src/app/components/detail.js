@@ -9,6 +9,8 @@ const Cart = () => {
         { title: 'NETFLIX', price: '1.199,00 ARS/mes' },
         { title: 'AMAZON PRIME', price: '899,00 ARS/mes' },
         { title: 'DISNEY+', price: '1.300,00 ARS/mes' },
+        { title: 'DISNEY+', price: '1.300,00 ARS/mes' },
+
     ]);
 
     // Función para eliminar un item del carrito
