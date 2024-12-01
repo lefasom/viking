@@ -3,12 +3,16 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'; // Corregido
+import { delete_cart } from '../redux/cartAction';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 const Cart = () => {
+    
+    const dispatch = useDispatch()
     const [cartItems, setCartItems] = useState([
         { title: 'NETFLIX', price: '1.199,00 ARS/mes' },
         { title: 'AMAZON PRIME', price: '899,00 ARS/mes' },
-        { title: 'DISNEY+', price: '1.300,00 ARS/mes' },
         { title: 'DISNEY+', price: '1.300,00 ARS/mes' },
 
     ]);
@@ -16,6 +20,7 @@ const Cart = () => {
     // Función para eliminar un item del carrito
     const removeItem = (index) => {
         setCartItems(cartItems.filter((_, itemIndex) => itemIndex !== index));
+        dispatch(delete_cart())
     };
 
     // Función para calcular el total del carrito
