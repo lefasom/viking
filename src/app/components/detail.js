@@ -101,18 +101,20 @@ const Cart = () => {
                                     </button>
                                 </div>
                             ))}
-
-                            <div className="absolute top-[67%] left-[30%] bg-gray-900 p-4 rounded-sm">
-                                <h3 className="text-xl font-bold text-white mb-4">Total: {calculateTotal().toLocaleString()} ARS</h3>
-                                <a
-                                    href={createWhatsAppMessage()} // Enlace para enviar el mensaje
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="m-4 w-full p-2 bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition duration-300"
-                                >
-                                    Confirmar Pedido
-                                </a>
+                            <div className='absolute top-[67%] left-0 w-full '>
+                                <div className="flex flex-col p-3 m-auto bg-gray-900 w-[250px] rounded-sm">
+                                    <h3 className="text-xl m-auto font-bold text-white ">Total: {calculateTotal().toLocaleString()} ARS</h3>
+                                    <a
+                                        href={createWhatsAppMessage()} // Enlace para enviar el mensaje
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="m-4 text-center p-2 bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition duration-300"
+                                    >
+                                        Confirmar Pedido
+                                    </a>
+                                </div>
                             </div>
+
                         </div>
                     )}
                 </div>
