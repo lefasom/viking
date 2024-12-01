@@ -7,7 +7,7 @@ import { delete_cart } from '../redux/cartAction';
 import { useDispatch, useSelector } from 'react-redux';
 
 
-const Cart = () => {
+const detail = () => {
     
     const dispatch = useDispatch()
     const [cartItems, setCartItems] = useState([
@@ -89,4 +89,4 @@ const Cart = () => {
     );
 };
 
-export default Cart;
+export default detail;

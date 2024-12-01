@@ -1,8 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Head from "next/head";
-import { Provider } from "react-redux";
-import store from "./redux/store";
 import Providers from "./redux/provider";
 
 const geistSans = localFont({
@@ -24,21 +22,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-            <Head>
+      <Head>
         {/* Aquí puedes agregar el meta del viewport */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
       </Head>
       <Providers>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-       {children}
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          {children}
 
-       
-      </body>
+
+        </body>
       </Providers>
-    
+
     </html>
   );
 }
