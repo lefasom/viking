@@ -80,13 +80,13 @@ const Cart = () => {
                             X
                         </Link>
                     </div>
-                    <div className="m-auto mt-12 w-[70%] p-4 max-w-md space-y-6 h-screen overflow-y-auto">
-                        <h2 className="text-2xl font-bold text-center text-gray-300">Tu carrito de compras</h2>
+                    <div className="m-auto mt-[80px] w-[70%] p-4 max-w-md space-y-6 h-[50%] overflow-y-auto">
+                        <h2 className="absolute -z-10 top-0 left-0 right-0 p-6  text-2xl font-bold text-center text-gray-300">Tu carrito de compras</h2>
 
                         {cartItems.length === 0 ? (
                             <p className="text-center text-gray-500">Tu carrito está vacío.</p>
                         ) : (
-                            <div className="space-y-4">
+                            <div className="space-y-2 ">
                                 {cartItems.map((item, index) => (
                                     <div key={index} className="flex justify-between items-center bg-gray-800 text-white rounded-sm p-4">
                                         <div>
@@ -102,13 +102,13 @@ const Cart = () => {
                                     </div>
                                 ))}
 
-                                <div className="bg-gray-900 p-4 rounded-sm">
-                                    <h3 className="text-xl font-bold text-white">Total: {calculateTotal().toLocaleString()} ARS</h3>
+                                <div className="absolute top-[67%] bg-gray-900 p-4 rounded-sm">
+                                    <h3 className="text-xl font-bold text-white mb-4">Total: {calculateTotal().toLocaleString()} ARS</h3>
                                     <a
                                         href={createWhatsAppMessage()} // Enlace para enviar el mensaje
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="mt-4 w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition duration-300"
+                                        className="m-4 w-full p-2 bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition duration-300"
                                     >
                                         Confirmar Pedido
                                     </a>
