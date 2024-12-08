@@ -1,73 +1,36 @@
 'use client'
 import { useState } from 'react';
-
-const cardData = [
-  {
-    title: 'NETFLIX',
-    price: '1.199,00 ARS/mes',
-    description: 'Disfruta de películas y series sin límites.',
-    buttonLabel: 'Eliminar',
-
-    features: ['Acceso a todo el catálogo', 'Ver en cualquier dispositivo'],
-    bgColor: 'bg-gray-800',
-    buttonColor: 'bg-red-600',
-  },
-  {
-    title: 'AMAZON PRIME',
-    price: '899,00 ARS/mes',
-    description: 'Acceso a series y películas exclusivas.',
-    buttonLabel: 'Agregar',
-
-    features: ['Envíos gratuitos en Amazon', 'Acceso a Prime Music'],
-    bgColor: 'bg-gray-800',
-    buttonColor: 'bg-yellow-600',
-  },
-  {
-    title: 'DISNEY+',
-    price: '1.300,00 ARS/mes',
-    description: 'Accede a películas y series de Disney.',
-    buttonLabel: 'Agregar',
-
-    features: ['Acceso a todos los clásicos de Disney', 'Ver en cualquier dispositivo'],
-    bgColor: 'bg-gray-800',
-    buttonColor: 'bg-blue-600',
-  },
-  {
-    title: 'HBO MAX',
-    price: '1.200,00 ARS/mes',
-    description: 'Disfruta de series y películas de HBO.',
-    buttonLabel: 'Agregar',
-    features: ['Acceso a contenido exclusivo', 'Ver en cualquier dispositivo'],
-    bgColor: 'bg-gray-800',
-    buttonColor: 'bg-green-600',
-  },
-];
+import { useDispatch, useSelector } from 'react-redux';
+import { discard, set_cart } from '../redux/cartAction';
+import {cardData} from '../data/data'
 
 export default function CardSlider() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [stateCart, setStateCart] = useState(true);
+  const dispatch = useDispatch();
+  const cart = useSelector(state => state.cart.cart);
 
-  const totalCards = cardData.length;
-  const addOfert = (ofert) => {
-    console.log(ofert)
-  }
+  const addOfert = (card) => {
+    dispatch(set_cart(card));
+  };
+
+  const deleteCard = (title) => {
+    dispatch(discard(title));
+  };
+
+  const isInCart = (card) => {
+    return !cart.some(item => item.title === card.title);
+  };
+
   return (
     <div className="relative w-full flex flex-col items-center justify-center pt-12 pb-12 space-y-6">
       <div className="w-full max-w-md space-y-6">
         {cardData.map((card, cardIndex) => (
-          <div key={cardIndex} className={`w-[90%] sm:w-[80%] md:w-[70%] mx-auto ${card.bgColor} rounded-sm shadow-lg`}>
+          <div key={cardIndex} className="w-[90%] sm:w-[80%] md:w-[70%] mx-auto bg-gray-800 rounded-sm shadow-lg">
             <div className="p-6 mx-auto">
               {/* Título */}
               <h2 className="text-2xl sm:text-xl md:text-lg font-bold text-white">{card.title}</h2>
 
               {/* Precio */}
               <p className="text-lg sm:text-base md:text-sm text-gray-300 mt-2">{card.price}</p>
-
-              {/* Información de impuestos
-              <p className="mx-5 text-sm sm:text-xs text-gray-400">+ impuestos aplicables</p> */}
-
-              {/* Botón */}
-
 
               {/* Descripción */}
               <p className="text-sm sm:text-xs md:text-[12px] text-gray-200 mt-4">{card.description}</p>
@@ -80,11 +43,25 @@ export default function CardSlider() {
                   </li>
                 ))}
               </ul>
-              <button className={`w-full  ${stateCart ? 'bg-green-600' : 'bg-red-600'} text-white font-bold py-2 px-4 sm:py-1 sm:px-2 text-sm sm:text-xs rounded mt-4 hover:bg-opacity-80 transition duration-300`}
-                onClick={() => addOfert(card)}
-              >
-                {card.buttonLabel}
-              </button>
+
+              {/* Botón dinámico según si el producto está en el carrito */}
+              {isInCart(card) ?
+                <button
+                  className={`w-full bg-green-600 text-white font-bold py-2 px-4 sm:py-1 sm:px-2 text-sm sm:text-xs rounded mt-4 hover:bg-opacity-80 transition duration-300`}
+                  onClick={() => addOfert(card)}
+                >
+                  Agregar
+                </button>
+                :
+
+                <button
+                  className={`w-full bg-red-600 text-white font-bold py-2 px-4 sm:py-1 sm:px-2 text-sm sm:text-xs rounded mt-4 hover:bg-opacity-80 transition duration-300`}
+                  onClick={() => deleteCard(card)}
+                >
+                  Retirar
+                </button>
+              }
+
             </div>
           </div>
         ))}

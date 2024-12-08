@@ -2,35 +2,28 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'; // Corregido
-import { delete_cart } from '../redux/cartAction';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
+import { discard } from '../redux/cartAction';  // Importamos la acción para eliminar
+import { useEffect } from 'react';
 
-
-const detail = () => {
-    
-    const dispatch = useDispatch()
-    const [cartItems, setCartItems] = useState([
-        { title: 'NETFLIX', price: '1.199,00 ARS/mes' },
-        { title: 'AMAZON PRIME', price: '899,00 ARS/mes' },
-        { title: 'DISNEY+', price: '1.300,00 ARS/mes' },
-
-    ]);
+const Detail = () => {
+    const dispatch = useDispatch();
+    const cart = useSelector(state => state.cart.cart);
 
     // Función para eliminar un item del carrito
-    const removeItem = (index) => {
-        setCartItems(cartItems.filter((_, itemIndex) => itemIndex !== index));
-        dispatch(delete_cart())
+    const removeItem = (item) => {
+        dispatch(discard(item));  // Despachamos la acción para eliminar el item del carrito
     };
 
     // Función para calcular el total del carrito
     const calculateTotal = () => {
-        return cartItems.reduce((total, item) => total + parseFloat(item.price.replace(' ARS/mes', '').replace('.', '').replace(',', '.')), 0);
+        return cart.reduce((total, item) => total + parseFloat(item.price.replace(' ARS/mes', '').replace('.', '').replace(',', '.')), 0);
     };
 
     // Crear el mensaje para enviar a WhatsApp
     const createWhatsAppMessage = () => {
-        const itemsDetails = cartItems.map(item => `${item.title}: ${item.price}`).join('%0A');
+        const itemsDetails = cart.map(item => `${item.title}: ${item.price}`).join('%0A');
         const total = calculateTotal().toLocaleString();
         const greeting = "¡Hola! Me gustaría hacer un pedido desde tu sitio web.";
         const message = `${greeting}%0A%0ADetalles del pedido:%0A${itemsDetails}%0A%0ATotal: ${total} ARS%0A%0AGracias por tu atención!`;
@@ -49,17 +42,17 @@ const detail = () => {
             <div className="m-auto mt-6 w-full max-w-lg p-4 bg-black rounded-lg shadow-lg h-full">
                 <h2 className="text-2xl font-bold text-center text-gray-400 mb-4">Tu carrito de compras</h2>
 
-                {cartItems.length === 0 ? (
+                {cart.length === 0 ? (
                     <p className="text-center text-gray-400">Tu carrito está vacío.</p>
                 ) : (
                     <div className="space-y-4 h-[70%] overflow-y-auto">
-                        {cartItems.map((item, index) => (
+                        {cart.map((item, index) => (
                             <div key={index} className="flex justify-between items-center bg-gray-800 rounded p-4">
                                 <div>
                                     <h3 className="text-lg font-semibold text-gray-300">{item.title}</h3>
                                     <p className="text-sm text-gray-200">{item.price}</p>
                                 </div>
-                                <button className="text-red-400 font-bold" onClick={() => removeItem(index)}>
+                                <button className="text-red-400 font-bold" onClick={() => removeItem(item)}>
                                     Eliminar
                                 </button>
                             </div>
@@ -89,4 +82,4 @@ const detail = () => {
     );
 };
 
-export default detail;
+export default Detail;

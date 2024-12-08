@@ -1,8 +1,9 @@
+import { add_cart, delete_cart } from "./cartSlice";
 
-export function delete_cart() {
-    return async () => {
+export function set_cart(data) {
+    return async (dispatch) => {
         try {
-            console.log("delete cart",)
+            dispatch(add_cart(data))
         } catch (error) {
             // Manejar cualquier error que ocurra durante la eliminación del documento
             console.error("Error al eliminar el documento:", error);
@@ -11,5 +12,16 @@ export function delete_cart() {
 }
 
 
+export function discard(data) {
+    return async (dispatch) => {
+        try {
+            console.log(data)
+            dispatch(delete_cart(data))
+        } catch (error) {
+            // Manejar cualquier error que ocurra durante la eliminación del documento
+            console.error("Error al eliminar el documento:", error);
+        }
+    };
+}
 
 

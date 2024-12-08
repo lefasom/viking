@@ -1,6 +1,9 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
+import { useSelector } from 'react-redux'
 function Cart() {
+    const cart = useSelector(state => state.cart.cart)
     return (
         <div>
             <Link href={'/detail'} >
@@ -12,7 +15,7 @@ function Cart() {
                     </svg>
                     <div className='relative right-[-33px] top-[-63px] flex rounded-full bg-red-700 w-6 h-6'>
                         <span className=' m-auto text-slate-200 font-semibold'>
-                            3
+                            {cart.length}
                         </span>
                     </div>
                 </div>
