@@ -45,7 +45,7 @@ export default function CardSlider() {
             </div>
 
             {/* Segundo div: Descripción, Características y Botón */}
-            <div className="p-6">
+            <div className="p-6 -mt-8">
               {/* Descripción */}
               <p className="text-sm sm:text-xs md:text-[12px] text-gray-200 mt-4">{card.description}</p>
 
