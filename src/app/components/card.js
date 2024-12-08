@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { discard, set_cart } from '../redux/cartAction';
 import {cardData} from '../data/data'
@@ -8,6 +8,9 @@ export default function CardSlider() {
   const dispatch = useDispatch();
   const cart = useSelector(state => state.cart.cart);
 
+  useEffect(()=>{
+    console.log("hola mundo")
+  })
   const addOfert = (card) => {
     dispatch(set_cart(card));
   };
@@ -53,7 +56,6 @@ export default function CardSlider() {
                   Agregar
                 </button>
                 :
-
                 <button
                   className={`w-full bg-red-600 text-white font-bold py-2 px-4 sm:py-1 sm:px-2 text-sm sm:text-xs rounded mt-4 hover:bg-opacity-80 transition duration-300`}
                   onClick={() => deleteCard(card)}
