@@ -45,7 +45,7 @@ export default function CardSlider() {
             </div>
 
             {/* Segundo div: Descripción, Características y Botón */}
-            <div className="p-6 -mt-8">
+            <div className="p-6">
               {/* Descripción */}
               <p className="text-sm sm:text-xs md:text-[12px] text-gray-200 mt-4">{card.description}</p>
 
@@ -69,7 +69,7 @@ export default function CardSlider() {
                 :
                 <button
                   className={`w-full bg-red-600 text-white font-bold py-2 px-4 sm:py-1 sm:px-2 text-sm sm:text-xs rounded mt-4 hover:bg-opacity-80 transition duration-300`}
-                  onClick={() => deleteCard(card)}
+                  onClick={() => deleteCard(card.title)}
                 >
                   Retirar
                 </button>
