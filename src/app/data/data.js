@@ -1,75 +1,41 @@
 export const cardData = [
-    {
-      title: 'NETFLIX',
-      price: '1.199,00 ARS/mes',
-      description: 'Disfruta de películas y series sin límites.',
-      features: ['Acceso a todo el catálogo', 'Ver en cualquier dispositivo', 'Calidad HD'],
-    },
-    {
-      title: 'Amazon Prime Video',
-      price: '999,00 ARS/mes',
-      description: 'Películas, series y contenido exclusivo de Amazon Originals.',
-      features: ['Prueba gratuita 30 días', 'Acceso a series exclusivas', 'Ver en cualquier dispositivo'],
-    },
-    {
-      title: 'Disney+',
-      price: '1.499,00 ARS/mes',
-      description: 'Las mejores películas y series de Disney, Pixar, Marvel, y más.',
-      features: ['Descargas ilimitadas', 'Contenido exclusivo', 'Perfiles para niños'],
-    },
-    {
-      title: 'HBO Max',
-      price: '1.249,00 ARS/mes',
-      description: 'Disfruta de las series y películas más aclamadas de HBO.',
-      features: ['Contenido original', 'Perfiles personalizados', 'Calidad 4K UHD'],
-    },
-    {
-      title: 'YouTube Premium',
-      price: '799,00 ARS/mes',
-      description: 'Videos sin anuncios y acceso a YouTube Music.',
-      features: ['Reproducción en segundo plano', 'Descarga videos para ver offline', 'Acceso a YouTube Originals'],
-    },
-    {
-      title: 'Apple TV+',
-      price: '849,00 ARS/mes',
-      description: 'Originales de Apple con grandes producciones y documentales.',
-      features: ['Contenido exclusivo', 'Ver en cualquier dispositivo', 'Prueba gratuita 7 días'],
-    },
-    {
-      title: 'Paramount+',
-      price: '599,00 ARS/mes',
-      description: 'Películas y series de Paramount, Nickelodeon y más.',
-      features: ['Contenido exclusivo', 'Ver en cualquier dispositivo', 'Prueba gratuita 7 días'],
-    },
-    {
-      title: 'Star+',
-      price: '1.099,00 ARS/mes',
-      description: 'Series y deportes en vivo con ESPN.',
-      features: ['Acceso a ESPN', 'Series y películas exclusivas', 'Ver en cualquier dispositivo'],
-    },
-    {
-      title: 'Crunchyroll',
-      price: '750,00 ARS/mes',
-      description: 'Anime en alta definición y sin anuncios.',
-      features: ['Acceso a todo el catálogo', 'Simulcast con Japón', 'Ver en cualquier dispositivo'],
-    },
-    {
-      title: 'Spotify Premium',
-      price: '499,00 ARS/mes',
-      description: 'Música sin anuncios y con calidad mejorada.',
-      features: ['Sin anuncios', 'Escucha offline', 'Calidad de sonido mejorada'],
-    },
-    {
-      title: 'Tidal',
-      price: '899,00 ARS/mes',
-      description: 'Música con calidad Hi-Fi y acceso a videos exclusivos.',
-      features: ['Audio Hi-Fi', 'Recomendaciones personalizadas', 'Descargas ilimitadas'],
-    },
-    {
-      title: 'Deezer Premium',
-      price: '599,00 ARS/mes',
-      description: 'Música sin anuncios y acceso offline.',
-      features: ['Sin anuncios', 'Recomendaciones personalizadas', 'Descargas ilimitadas'],
-    }
-  ];
-  
+  {
+    title: 'NETFLIX',
+    price: '1.199,00 ARS/mes',
+    description: 'Disfruta de películas y series sin límites.',
+    features: ['Acceso a todo el catálogo', 'Ver en cualquier dispositivo', 'Calidad HD'],
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWaXQ1LIn-kWXlXjXMjPRaEbQk5uyDs1kkAQO7in4jkvqmG-kB8fZMaukp092SIoV7pck&usqp=CAU'
+
+  },
+  {
+    title: 'Amazon Prime Video',
+    price: '999,00 ARS/mes',
+    description: 'Películas, series y contenido exclusivo de Amazon Originals.',
+    features: ['Prueba gratuita 30 días', 'Acceso a series exclusivas', 'Ver en cualquier dispositivo'],
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWaXQ1LIn-kWXlXjXMjPRaEbQk5uyDs1kkAQO7in4jkvqmG-kB8fZMaukp092SIoV7pck&usqp=CAU'
+
+  },
+  {
+    title: 'Disney+',
+    price: '1.499,00 ARS/mes',
+    description: 'Las mejores películas y series de Disney, Pixar, Marvel, y más.',
+    features: ['Descargas ilimitadas', 'Contenido exclusivo', 'Perfiles para niños'],
+    image: 'data:image/jpeg;base64,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'
+
+  },
+  {
+    title: 'HBO Max',
+    price: '1.249,00 ARS/mes',
+    description: 'Disfruta de las series y películas más aclamadas de HBO.',
+    features: ['Contenido original', 'Perfiles personalizados', 'Calidad 4K UHD'],
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWaXQ1LIn-kWXlXjXMjPRaEbQk5uyDs1kkAQO7in4jkvqmG-kB8fZMaukp092SIoV7pck&usqp=CAU'
+
+  },
+  {
+    title: 'YouTube Premium',
+    price: '799,00 ARS/mes',
+    description: 'Videos sin anuncios y acceso a YouTube Music.',
+    features: ['Reproducción en segundo plano', 'Descarga videos para ver offline', 'Acceso a YouTube Originals'],
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWaXQ1LIn-kWXlXjXMjPRaEbQk5uyDs1kkAQO7in4jkvqmG-kB8fZMaukp092SIoV7pck&usqp=CAU'
+  }
+];
