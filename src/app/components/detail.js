@@ -45,9 +45,12 @@ const Detail = () => {
                 {cart.length === 0 ? (
                     <p className="text-center text-gray-400">Tu carrito está vacío.</p>
                 ) : (
-                    <div className="space-y-4 h-[70%] overflow-y-auto">
+                    <div className="space-y-4 h-[75%] overflow-y-auto">
                         {cart.map((item, index) => (
+
                             <div key={index} className="flex justify-between items-center bg-gray-800 rounded p-4">
+                                <div className="w-16 h-16 bg-cover bg-center rounded-md" style={{ backgroundImage: `url(${item.image})` }}></div>
+
                                 <div>
                                     <h3 className="text-lg font-semibold text-gray-300">{item.title}</h3>
                                     <p className="text-sm text-gray-200">{item.price}</p>
@@ -59,22 +62,25 @@ const Detail = () => {
                         ))}
 
                         {/* Total sin el costo de envío */}
-                        <div className="border-t border-gray-300 pt-4">
-                            <div className="flex justify-between text-gray-400 font-bold">
-                                <span>Total:</span>
-                                <span>{calculateTotal().toLocaleString()} ARS</span>
+                        <div className='absolute left-2 bottom-6 right-2'>
+                            <div className="border-t border-gray-300 pt-4 mb-4">
+                                <div className="flex justify-between text-gray-400 font-bold">
+                                    <span>Total:</span>
+                                    <span>{calculateTotal().toLocaleString()} ARS</span>
+                                </div>
                             </div>
+
+                            {/* Botón para confirmar el pedido vía WhatsApp */}
+                            <a
+                                href={createWhatsAppMessage()}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full text-center p-3 bg-green-500 text-white rounded-md hover:bg-green-600 transition duration-300"
+                            >
+                                Confirmar Pedido
+                            </a>
                         </div>
 
-                        {/* Botón para confirmar el pedido vía WhatsApp */}
-                        <a
-                            href={createWhatsAppMessage()}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block w-full text-center p-3 bg-green-500 text-white rounded-md hover:bg-green-600 transition duration-300"
-                        >
-                            Confirmar Pedido
-                        </a>
                     </div>
                 )}
             </div>
