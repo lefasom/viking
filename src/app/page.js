@@ -2,11 +2,14 @@ import Header from "./components/header";
 import Card from "./components/card";
 import Cart from "./components/cart";
 import Footer from "./components/footer";
-
+import GetData from "./components/getdata";
 
 export default function Home() {
+
+  
   return (
       <div className="grid place-items-center">
+        <GetData />
         <Header />
         <Cart />
 

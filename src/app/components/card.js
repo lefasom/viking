@@ -2,16 +2,11 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { discard, set_cart } from '../redux/cartAction';
-import { cardData } from '../data/data';
+import { cardData } from '../db/data';
 
 export default function CardSlider() {
   const dispatch = useDispatch();
   const cart = useSelector(state => state.cart.cart);
-
-  useEffect(() => {
-    console.log("hola mundo");
-  });
-
   const addOfert = (card) => {
     dispatch(set_cart(card));
   };
