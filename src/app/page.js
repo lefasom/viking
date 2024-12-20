@@ -1,12 +1,25 @@
+'use client'
 import Header from "./components/header";
 import Card from "./components/card";
 import Cart from "./components/cart";
 import Footer from "./components/footer";
 import GetData from "./components/getdata";
+import { useEffect } from "react";
+import { get_card } from "./redux/dataAction";
+import { useDispatch } from "react-redux";
 
 export default function Home() {
+const dispatch = useDispatch()
 
-  
+  const getCard = () =>{
+    dispatch(get_card())
+  }
+
+  useEffect(()=>{
+    getCard(
+
+    )
+  },[])
   return (
       <div className="grid place-items-center">
         <GetData />

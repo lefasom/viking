@@ -16,7 +16,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // Verifica si la inicialización es exitosa
-console.log('Firebase App initialized:', app);
 
 // Inicializa Firestore
 export const db = getFirestore(app);

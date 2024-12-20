@@ -4,9 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { discard, set_cart } from '../redux/cartAction';
 import { cardData } from '../db/data';
 
+
 export default function CardSlider() {
   const dispatch = useDispatch();
   const cart = useSelector(state => state.cart.cart);
+  const card = useSelector(state => state.data.data_array)
+
   const addOfert = (card) => {
     dispatch(set_cart(card));
   };
@@ -18,6 +21,11 @@ export default function CardSlider() {
   const isInCart = (card) => {
     return !cart.some(item => item.title === card.title);
   };
+
+  useEffect(() => {
+    console.log(card)
+  })
+
 
   return (
     <div className="relative w-full flex flex-col items-center justify-center pt-12 pb-12 space-y-6">
@@ -54,7 +62,7 @@ export default function CardSlider() {
               </ul>
 
               {/* Botón dinámico según si el producto está en el carrito */}
-              {isInCart(card) ? 
+              {isInCart(card) ?
                 <button
                   className={`w-full bg-green-600 text-white font-bold py-2 px-4 sm:py-1 sm:px-2 text-sm sm:text-xs rounded mt-4 hover:bg-opacity-80 transition duration-300`}
                   onClick={() => addOfert(card)}

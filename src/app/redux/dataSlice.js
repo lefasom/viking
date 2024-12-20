@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const dataSlice = createSlice({
-    name: 'card',
+    name: 'data',
     initialState: {
-        card_array: [],
+        data_array: [],
     },
     reducers: {
-        current_card: (state, action) => {
-            state.card_array = action.payload
+        current_data: (state, action) => {
+            state.data_array = action.payload
         },
         delete_card: (state, action) => {
             const cards = state.card_array.filter((e) => { return (e.id != action.payload) })
@@ -17,7 +17,7 @@ const dataSlice = createSlice({
 })
 
 export const {
-    current_card,
+    current_data,
     delete_card
 } = dataSlice.actions
 

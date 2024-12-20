@@ -1,6 +1,6 @@
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../db/firebase";
-import { current_card } from "./dataSlice";
+import { current_data } from "./dataSlice";
 
 export function get_card() {
     return async (dispatch) => {
@@ -13,7 +13,8 @@ export function get_card() {
             querySnapshot.forEach((doc) => {
                 docs.push({ ...doc.data(), id: doc.id });
             });
-            dispatch(current_card(docs))
+            console.log(docs)
+            dispatch(current_data(docs))
 
         } catch (error) {
             // Captura cualquier error y lo muestra en la consola
