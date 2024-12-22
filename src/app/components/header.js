@@ -27,7 +27,7 @@ export default function Header() {
         <nav className="flex justify-center space-x-6">
           <ul className="flex space-x-8">
             <li>
-              <a href="https://t.me/@Josesitocu" target="_blank" rel="noopener noreferrer" className="flex items-center text-slate-200 hover:text-blue-400 transition transform hover:scale-110 duration-300">
+              <a href="https://t.me/2612725968" target="_blank" rel="noopener noreferrer" className="flex items-center text-slate-200 hover:text-blue-400 transition transform hover:scale-110 duration-300">
                 <FontAwesomeIcon icon={faTelegram} className="h-14 w-14" />
               </a>
             </li>
@@ -37,7 +37,7 @@ export default function Header() {
               </a>
             </li>
             <li>
-              <a href="https://instagram.com/yourinstagramusername" target="_blank" rel="noopener noreferrer" className="flex items-center text-slate-100 hover:text-pink-400 transition transform hover:scale-110 duration-300">
+              <a href="https://instagram.com/igcuello.20" target="_blank" rel="noopener noreferrer" className="flex items-center text-slate-100 hover:text-pink-400 transition transform hover:scale-110 duration-300">
                 <FontAwesomeIcon icon={faInstagram} className="h-14 w-14" />
               </a>
             </li>

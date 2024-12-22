@@ -28,7 +28,7 @@ export default function Footer() {
             <FontAwesomeIcon icon={faTelegram} className="h-8 w-8" />
           </a>
           <a
-            href="https://instagram.com/yourinstagramusername"
+            href="https://instagram.com/igcuello.20"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center text-gray-400 hover:text-pink-500 transition duration-300 transform hover:scale-110"
