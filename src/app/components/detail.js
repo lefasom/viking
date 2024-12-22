@@ -27,7 +27,7 @@ const Detail = () => {
         const total = calculateTotal().toLocaleString();
         const greeting = "¡Hola! Me gustaría hacer un pedido desde tu sitio web.";
         const message = `${greeting}%0A%0ADetalles del pedido:%0A${itemsDetails}%0A%0ATotal: ${total} ARS%0A%0AGracias por tu atención!`;
-        return `https://wa.me/2616615057?text=${message}`;
+        return `https://wa.me/2612725968?text=${message}`;
     };
 
     return (

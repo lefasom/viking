@@ -9,10 +9,6 @@ const dataSlice = createSlice({
         current_data: (state, action) => {
             state.data_array = action.payload
         },
-        delete_card: (state, action) => {
-            const cards = state.card_array.filter((e) => { return (e.id != action.payload) })
-            state.card_array = cards
-        },
     }
 })
 

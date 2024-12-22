@@ -10,15 +10,12 @@ import { useDispatch } from "react-redux";
 
 export default function Home() {
 const dispatch = useDispatch()
-
   const getCard = () =>{
     dispatch(get_card())
   }
 
   useEffect(()=>{
-    getCard(
-
-    )
+    getCard()
   },[])
   return (
       <div className="grid place-items-center">

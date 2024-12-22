@@ -12,7 +12,7 @@ export default function Footer() {
         {/* Iconos Redes Sociales */}
         <div className="flex space-x-8 mb-6">
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/2612725968"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center text-gray-400 hover:text-green-500 transition duration-300 transform hover:scale-110"
@@ -20,7 +20,7 @@ export default function Footer() {
             <FontAwesomeIcon icon={faWhatsapp} className="h-8 w-8" />
           </a>
           <a
-            href="https://t.me/yourtelegramusername"
+            href="https://t.me/@josesitocu"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center text-gray-400 hover:text-blue-500 transition duration-300 transform hover:scale-110"
@@ -45,7 +45,7 @@ export default function Footer() {
 
         {/* Icono GitHub */}
         <a 
-          href="https://github.com/yourgithubusername" 
+          href="https://github.com/lefasom" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="flex items-center text-gray-400 hover:text-white transition duration-300 transform hover:scale-110 mb-4"

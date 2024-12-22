@@ -2,8 +2,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { discard, set_cart } from '../redux/cartAction';
-import { cardData } from '../db/data';
-
 
 export default function CardSlider() {
   const dispatch = useDispatch();
@@ -26,11 +24,10 @@ export default function CardSlider() {
     console.log(card)
   })
 
-
   return (
     <div className="relative w-full flex flex-col items-center justify-center pt-12 pb-12 space-y-6">
       <div className="w-full max-w-md space-y-6">
-        {cardData.map((card, cardIndex) => (
+        {card.map((card, cardIndex) => (
           <div key={cardIndex} className="w-[90%] sm:w-[80%] md:w-[70%] mx-auto bg-gray-800 rounded-lg shadow-xl overflow-hidden">
             <div className="flex p-6 items-start">
               {/* Primer div: Título, Imagen y Precio */}
