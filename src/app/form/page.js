@@ -56,6 +56,7 @@ const Pages = () => {
             <div className="m-auto mt-6 w-full max-w-lg p-4 bg-black rounded-lg shadow-lg h-full">
                 <h2 className="text-2xl font-bold text-center text-gray-400 mb-4">Crear nuevo producto</h2>
 
+
                 {/* Formulario para agregar un nuevo ítem */}
                 <div className="space-y-4 mb-6">
                     <input
@@ -112,6 +113,17 @@ const Pages = () => {
                         Crear
                     </button>
                 </div>
+
+                {/* Vista previa de la imagen */}
+
+                {image && (<>
+                    <h2 className="text-2xl font-bold text-center text-gray-400 mb-4">Vista previa de la imagen</h2>
+
+                    <div className="mb-6">
+                        <img src={image} alt="Vista previa" className="w-16 h-16 object-cover rounded-md" />
+                    </div>
+                </>)}
+
             </div>
         </div>
     );
