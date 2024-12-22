@@ -1,6 +1,7 @@
 'use client'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList, faPlus, faHome } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 export default function AdminPanel() {
   return (
@@ -12,29 +13,29 @@ export default function AdminPanel() {
         {/* Navegación con enlaces */}
         <div className="flex flex-col space-y-8 mt-6">
           {/* Enlace para el Sitio Web con icono */}
-          <a
+          <Link
             href="/"
             className="text-2xl text-white bg-blue-600 hover:bg-blue-800 px-6 py-3 rounded-lg border-2 border-blue-600 hover:border-blue-800 transition transform hover:scale-110 duration-300 flex items-center"
           >
             <FontAwesomeIcon icon={faHome} className="mr-2 h-8 w-8" />
             Sitio Web
-          </a>
+          </Link>
           {/* Enlace para Listar Productos */}
-          <a
+          <Link
             href="/list"
             className="text-2xl text-white bg-blue-600 hover:bg-blue-800 px-6 py-3 rounded-lg border-2 border-blue-600 hover:border-blue-800 transition transform hover:scale-110 duration-300 flex items-center"
           >
             <FontAwesomeIcon icon={faList} className="mr-2 h-8 w-8" />
             Listar Productos
-          </a>
+          </Link>
           {/* Enlace para Crear Producto */}
-          <a
+          <Link
             href="/form"
             className="text-2xl text-white bg-green-600 hover:bg-green-800 px-6 py-3 rounded-lg border-2 border-green-600 hover:border-green-800 transition transform hover:scale-110 duration-300 flex items-center"
           >
             <FontAwesomeIcon icon={faPlus} className="mr-2 h-8 w-8" />
             Crear Producto
-          </a>
+          </Link>
         </div>
       </div>
     </header>
