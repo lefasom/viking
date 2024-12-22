@@ -20,7 +20,7 @@ export default function Footer() {
             <FontAwesomeIcon icon={faWhatsapp} className="h-8 w-8" />
           </a>
           <a
-            href="https://t.me/@Josesitocu"
+            href="https://t.me/2612725968"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center text-gray-400 hover:text-blue-500 transition duration-300 transform hover:scale-110"
