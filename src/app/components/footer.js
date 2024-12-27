@@ -12,7 +12,7 @@ export default function Footer() {
         {/* Iconos Redes Sociales */}
         <div className="flex space-x-8 mb-6">
           <a
-            href="https://wa.me/2612725968"
+            href="https://wa.me/2612725968?text=Hola!%20Vengo%20de%20Viking%20Store%20y%20me%20gustaría%20hacerte%20unas%20consultas%20sobre%20tus%20productos.%20Gracias!"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center text-gray-400 hover:text-green-500 transition duration-300 transform hover:scale-110"
@@ -20,7 +20,7 @@ export default function Footer() {
             <FontAwesomeIcon icon={faWhatsapp} className="h-8 w-8" />
           </a>
           <a
-            href="https://t.me/2612725968"
+            href="https://t.me/2612725968?text=Hola!%20Vengo%20de%20Viking%20Store%20y%20me%20gustaría%20hablar%20contigo%20acerca%20de%20tus%20productos.%20¿Podrías%20ayudarme?"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center text-gray-400 hover:text-blue-500 transition duration-300 transform hover:scale-110"

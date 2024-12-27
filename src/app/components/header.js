@@ -27,12 +27,12 @@ export default function Header() {
         <nav className="flex justify-center space-x-6">
           <ul className="flex space-x-8">
             <li>
-              <a href="https://t.me/2612725968" target="_blank" rel="noopener noreferrer" className="flex items-center text-slate-200 hover:text-blue-400 transition transform hover:scale-110 duration-300">
+              <a href="https://t.me/2612725968?text=Hola!%20Vengo%20de%20Viking%20Store%20y%20me%20gustaría%20hablar%20contigo%20acerca%20de%20tus%20productos.%20¿Podrías%20ayudarme?" target="_blank" rel="noopener noreferrer" className="flex items-center text-slate-200 hover:text-blue-400 transition transform hover:scale-110 duration-300">
                 <FontAwesomeIcon icon={faTelegram} className="h-14 w-14" />
               </a>
             </li>
             <li>
-              <a href="https://wa.me/2612725968" target="_blank" rel="noopener noreferrer" className="flex items-center animate-pulse text-green-400 hover:text-green-400 transition transform hover:scale-110 duration-300">
+              <a href="https://wa.me/2612725968?text=Hola!%20Vengo%20de%20Viking%20Store%20y%20me%20gustaría%20hacerte%20unas%20consultas%20sobre%20tus%20productos.%20Gracias!" target="_blank" rel="noopener noreferrer" className="flex items-center animate-pulse text-green-400 hover:text-green-400 transition transform hover:scale-110 duration-300">
                 <FontAwesomeIcon icon={faWhatsapp} className="h-14 w-14" />
               </a>
             </li>
