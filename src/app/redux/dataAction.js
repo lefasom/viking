@@ -29,7 +29,8 @@ export async function add_card({
     price,
     description,
     features,
-    image }) {
+    image,
+    relevancia }) {
     try {
         // Add a new document to the collection
         const docRef = await addDoc(collection(db, "card"), {
@@ -37,7 +38,8 @@ export async function add_card({
             price,
             description,
             features,
-            image
+            image,
+            relevancia
         });
         console.log("Document written with ID: ", docRef.id);
     } catch (error) {
@@ -49,7 +51,7 @@ export async function add_card({
 //     cardData.forEach(async (card) => {
 //         try {
 //             await addDoc(collection(db, "card"), card); // Llama a la función add_card por cada objeto
-           
+
 //         } catch (error) {
 //             console.error(`Error adding card: ${card.title}`, error);
 //         }
@@ -77,7 +79,7 @@ export async function get_card_by_id(id) {
         console.error("Error obteniendo el documento:", error);
     }
 }
-export async function update_card(id, { title, price, description, features, image }) {
+export async function update_card(id, { title, price, description, features, image, relevancia }) {
     try {
         const docRef = doc(db, "card", id);
 
@@ -87,7 +89,8 @@ export async function update_card(id, { title, price, description, features, ima
             price,
             description,
             features,
-            image
+            image,
+            relevancia
         });
 
         console.log("Documento actualizado con ID: ", id);

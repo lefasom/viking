@@ -53,7 +53,7 @@ const Detail = () => {
 
                                 <div>
                                     <h3 className="text-lg font-semibold text-gray-300">{item.title}</h3>
-                                    <p className="text-sm text-gray-200">{item.price}</p>
+                                    <p className="text-sm text-gray-200">$ {item.price}</p>
                                 </div>
                                 <button className="text-red-400 font-bold" onClick={() => removeItem(item)}>
                                     Eliminar
@@ -66,7 +66,7 @@ const Detail = () => {
                             <div className="border-t border-gray-300 pt-4 mb-4">
                                 <div className="flex justify-between text-gray-400 font-bold">
                                     <span>Total:</span>
-                                    <span>{calculateTotal().toLocaleString()} ARS</span>
+                                    <span>$ {calculateTotal().toLocaleString()} ARG</span>
                                 </div>
                             </div>
 

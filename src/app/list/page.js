@@ -17,7 +17,7 @@ const page = () => {
     // Función para obtener todos los elementos al cargar la página
     useEffect(() => {
         getCard();
-    }); // Añadido el arreglo vacío para ejecutar solo al cargar la página
+    }, []); // Añadido el arreglo vacío para ejecutar solo al cargar la página
 
     // Función para eliminar un ítem
     const handleDelete = async (id) => {
@@ -26,6 +26,9 @@ const page = () => {
             await delete_card(id);  // Función que elimina el ítem de Firebase
         }
     };
+
+    // Ordenar los elementos por relevancia de menor a mayor
+    const sortedCard = [...card].sort((a, b) => a.relevancia - b.relevancia);
 
     return (
         <div className='fixed bg-black bg-opacity-80 z-50 flex right-0 top-0 w-full h-full'>
@@ -40,16 +43,19 @@ const page = () => {
             <div className="m-auto mt-6 w-full max-w-lg p-4 bg-black rounded-lg shadow-lg h-full">
                 <h2 className="text-2xl font-bold text-center text-gray-400 mb-4">Lista de Productos</h2>
 
-                {card.length === 0 ? (
+                {sortedCard.length === 0 ? (
                     <p className="text-center text-gray-400">No hay productos en la lista.</p>
                 ) : (
                     <div className="space-y-4 h-[87%] overflow-y-auto">
-                        {card.map((card) => (
+                        {sortedCard.map((card) => (
                             <div key={card.id} className="flex justify-between items-center bg-gray-800 rounded p-4">
                                 <div className="w-16 h-16 bg-cover bg-center rounded-md" style={{ backgroundImage: `url(${card.image})` }}></div>
 
                                 <div>
                                     <h3 className="text-lg font-semibold text-gray-300">{card.title}</h3>
+                                    <p className="text-xs font-semibold text-gray-500">relevancia:{" "}
+                                        <span className="text-xs font-semibold text-gray-200">{card.relevancia}</span>
+                                    </p>
                                 </div>
                                 <div className="flex space-x-3">
                                     {/* Botón de Editar */}
@@ -64,7 +70,6 @@ const page = () => {
                                 </div>
                             </div>
                         ))}
-
                     </div>
                 )}
             </div>

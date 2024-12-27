@@ -6,7 +6,7 @@ import { discard, set_cart } from '../redux/cartAction';
 export default function CardSlider() {
   const dispatch = useDispatch();
   const cart = useSelector(state => state.cart.cart);
-  const card = useSelector(state => state.data.data_array)
+  const card = useSelector(state => state.data.data_array);
 
   const addOfert = (card) => {
     dispatch(set_cart(card));
@@ -20,14 +20,17 @@ export default function CardSlider() {
     return !cart.some(item => item.title === card.title);
   };
 
+  // Ordenar los elementos por relevancia de menor a mayor
+  const sortedCard = [...card].sort((a, b) => a.relevancia - b.relevancia);
+
   useEffect(() => {
-    console.log(card)
-  })
+    console.log(sortedCard)
+  });
 
   return (
     <div className="relative w-full flex flex-col items-center justify-center pt-12 pb-12 space-y-6">
       <div className="w-full max-w-md space-y-6">
-        {card.map((card, cardIndex) => (
+        {sortedCard.map((card, cardIndex) => (
           <div key={cardIndex} className="w-[90%] sm:w-[80%] md:w-[70%] mx-auto bg-gray-800 rounded-lg shadow-xl overflow-hidden">
             <div className="flex p-6 items-start">
               {/* Primer div: Título, Imagen y Precio */}
@@ -39,7 +42,7 @@ export default function CardSlider() {
                   <h2 className="text-2xl sm:text-xl md:text-lg font-bold text-white">{card.title}</h2>
 
                   {/* Precio */}
-                  <p className="text-lg sm:text-base md:text-sm text-gray-300 mt-2">{card.price}</p>
+                  <p className="text-lg sm:text-base md:text-sm text-gray-300 mt-2">$ {card.price}</p>
                 </div>
               </div>
             </div>

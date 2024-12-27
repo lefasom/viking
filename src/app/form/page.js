@@ -6,7 +6,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { add_card } from '../redux/dataAction';
 
 const Pages = () => {
-
+    const [relevancia, setRelevancia] = useState(0);
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState('');
     const [description, setDescription] = useState('');
@@ -33,10 +33,10 @@ const Pages = () => {
             return;
         }
 
-        console.log("elemento creado: ", { title, price, description, features, image });
+        console.log("elemento creado: ", { title, price, description, features, image, relevancia });
 
-        await add_card({ title, price, description, features, image });
-
+        await add_card({ title, price, description, features, image, relevancia });
+        setRelevancia(0);
         setTitle('');
         setPrice('');
         setDescription('');
@@ -59,6 +59,13 @@ const Pages = () => {
 
                 {/* Formulario para agregar un nuevo ítem */}
                 <div className="space-y-4 mb-6">
+                <input
+                        type="number"
+                        placeholder="Relevancia"
+                        value={relevancia}
+                        onChange={(e) => setRelevancia(e.target.value)}
+                        className="w-full p-2 rounded bg-gray-800 text-gray-300"
+                    />
                     <input
                         type="text"
                         placeholder="Título del ítem"
@@ -87,7 +94,7 @@ const Pages = () => {
                         onChange={(e) => setImage(e.target.value)}
                         className="w-full p-2 rounded bg-gray-800 text-gray-300"
                     />
-
+                 
                     {/* Campos para las características del ítem */}
                     {features.map((feature, index) => (
                         <input
